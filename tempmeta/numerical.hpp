@@ -1,11 +1,12 @@
 /**
- * @file sfinae.hpp
- * @brief
+ * @file numerical.hpp
+ * @brief Numerical TMP functions.
  * @author Salvatore Cardamone
  */
-#ifndef __TEMPMETA_SFINAE_HPP
-#define __TEMPMETA_SFINAE_HPP
+#ifndef __TEMPMETA_NUMERICAL_HPP
+#define __TEMPMETA_NUMERICAL_HPP
 
+// Standard Library Inclusions
 #include <complex>
 #include <type_traits>
 
@@ -34,14 +35,14 @@ struct numerical_precision_t<std::complex<T>> {
 /**
  * @brief Return the numerical precision of a datatype.
  * @tparam The datatype whose precision we're evaluating.
- * @retval The numerical precision of the datatype underlying the template 
+ * @retval The numerical precision of the datatype underlying the template
            parameter.
  */
 template <typename T>
 struct numerical_precision {
-  using type = numerical_precision_t<T>::type;
+  using type = typename numerical_precision_t<T>::type;
 };
 
 } // namespace TempMeta
 
-#endif /* #ifndef __TEMPMETA_SFINAE_HPP */
+#endif /* #ifndef __TEMPMETA_NUMERICAL_HPP */
