@@ -20,7 +20,7 @@ constexpr std::string_view type_name() {
   // Garbage that __PRETTY_FUNCTION__ creates with GNU compiler that
   // we want to discard from the string
   std::string_view name = __PRETTY_FUNCTION__;
-  std::string_view prefix = "constexpr std::string_view type_name() [with T = ";
+  std::string_view prefix = "constexpr std::string_view TempMeta::type_name() [with T = ";
   std::string_view suffix = "; std::string_view = std::basic_string_view<char>]";
 
   // Remove the garbage
